@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar'
 import React, { useEffect, useState } from 'react'
-import { StyleSheet, Text, View, ActivityIndicator } from 'react-native'
+import {ImageBackground, StyleSheet, Text, View, ActivityIndicator } from 'react-native'
 import * as Location from 'expo-location'
 import WeatherInfo from './components/WeatherInfo'
 import UnitsPicker from './components/UnitsPicker'
@@ -10,6 +10,7 @@ import { colors } from './utils/index'
 
 const API_KEY = "427900f01d1957fd619fccaa810ab68a"
 const BASE_WEATHER_URL = 'https://api.openweathermap.org/data/2.5/weather?'
+
 
 export default function App() {
     const [errorMessage, setErrorMessage] = useState(null)
@@ -83,6 +84,11 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
     },
+    image: {
+        flex: 1,
+        resizeMode: "cover",
+        justifyContent: "center"
+      },
     main: {
         justifyContent: 'center',
         flex: 1,
